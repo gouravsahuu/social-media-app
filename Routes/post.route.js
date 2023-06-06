@@ -40,7 +40,7 @@ postRoute.post("/posts",authentication,async(req,res) => {
     }
 })
 
-postRoute.patch("/api/posts/:id",authentication,async(req,res) => {
+postRoute.patch("/posts/:id",authentication,async(req,res) => {
     const id = req.params.id;
     const updatePost = req.body;
     try{
@@ -52,7 +52,7 @@ postRoute.patch("/api/posts/:id",authentication,async(req,res) => {
     }
 })
 
-postRoute.delete("/api/posts/:id",authentication,async(req,res) => {
+postRoute.delete("/posts/:id",authentication,async(req,res) => {
     const id = req.params.id;
     try{
         await PostModel.findByIdAndDelete(id);
@@ -63,7 +63,7 @@ postRoute.delete("/api/posts/:id",authentication,async(req,res) => {
     }
 })
 
-postRoute.post("/api/posts/:id/like",authentication,async(req,res) => {
+postRoute.post("/posts/:id/like",authentication,async(req,res) => {
     const id = req.params.id;
     const liked = req.body;
     try{
@@ -77,7 +77,7 @@ postRoute.post("/api/posts/:id/like",authentication,async(req,res) => {
     }
 })
 
-postRoute.post("/api/posts/:id/comment",authentication,async(req,res) => {
+postRoute.post("/posts/:id/comment",authentication,async(req,res) => {
     const id = req.params.id;
     const commented = req.body;
     try{
